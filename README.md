@@ -5,6 +5,8 @@ Responsive Registration Form with client side validation and sweet alert using b
 
 ![image](https://github.com/user-attachments/assets/4c810286-f1eb-421a-8b43-e6830275fd3f)
 
+![image](https://github.com/user-attachments/assets/5defe5ec-9294-4b24-afbe-f29bd20394b1)
+
 
 ![image](https://github.com/user-attachments/assets/0acbcd84-302e-49b8-aecd-74da2ebde8ca)
 
