@@ -335,22 +335,25 @@ function validatePhoneNumber() {
      
  <!-- Date validation -->
   <script>
-     const dateInput = document.getElementById("date");
-     const dateError = document.getElementById("dateError");
-     dateInput.addEventListener("change", function () {
-            const selectedDate = new Date(dateInput.value);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0); // Remove time part for comparison
+        document.addEventListener("DOMContentLoaded", function () {
+        let dateInput = document.getElementById("date");
 
-            if (selectedDate >= today) {
-                dateError.style.display = "block"; // Show error message
-                setTimeout(() => {
-                    dateError.style.display = "none"; // Hide after 2 seconds
-                }, 2000);
-                dateInput.value = ""; // Clear invalid date
-            } else {
-                dateError.style.display = "none"; // Hide error if valid
+        // Calculate the maximum allowed date (18 years ago from today)
+        let today = new Date();
+        today.setFullYear(today.getFullYear() - 18);
+        let maxDate = today.toISOString().split("T")[0];
+
+        // Attach event listener to the date input
+        dateInput.addEventListener("input", function () {
+            let selectedDate = dateInput.value;
+
+            // Check if the selected date is beyond the allowed date
+            if (selectedDate > maxDate) {
+                alert("You must be at least 18 years old or cannot select a future date.");
+                // Clear the invalid selection
+                dateInput.value = "";
             }
+        });
         });
     </script>
 
